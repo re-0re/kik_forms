@@ -1,17 +1,88 @@
+:root {
+  --bg: #f5f7fa;
+  --text: #222;
+  --accent: #0077ff;
+  --radius: 12px;
+}
+
 body {
-  font-family: sans-serif;
-  max-width: 600px;
-  margin: 40px auto;
-  text-align: left;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
 }
+
+.container {
+  background: white;
+  margin-top: 60px;
+  padding: 40px 50px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  max-width: 420px;
+  width: 100%;
+}
+
 h1 {
+  margin-top: 0;
   text-align: center;
+  color: var(--accent);
 }
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 0.95em;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1em;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
 button {
-  padding: 10px 20px;
-  background-color: #0077ff;
+  width: 100%;
+  background: var(--accent);
   color: white;
   border: none;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: var(--radius);
+  font-size: 1em;
+  font-weight: 600;
   cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #005ed4;
+}
+
+#status {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.95em;
 }
