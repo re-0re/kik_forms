@@ -12,7 +12,7 @@ document.getElementById("survey-form").addEventListener("submit", async (e) => {
   status.textContent = "⏳ Отправка...";
 
   try {
-    await fetch("https://script.google.com/macros/s/AKfycbz7bNNB0vAWafp7neakoxfSLySGOV2yfGb0Z9gRoE9QylLTEBBAPK5QjYs74MEi1Dlg/exec", {
+    await fetch("https://script.google.com/macros/s/ВАШ_SCRIPT_ID/exec", {
       method: "POST",
       body: JSON.stringify(data)
     });
