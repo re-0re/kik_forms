@@ -86,3 +86,35 @@ button:hover {
   margin-top: 15px;
   font-size: 0.95em;
 }
+.status {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.status.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.status.success {
+  background: #e6f9ee;
+  color: #0b8a42;
+  border: 1px solid #a4e6b8;
+}
+
+.status.error {
+  background: #ffeaea;
+  color: #c20000;
+  border: 1px solid #ff9b9b;
+}
+
+.hidden {
+  display: none;
+}
+
