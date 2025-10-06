@@ -9,19 +9,39 @@ document.getElementById("survey-form").addEventListener("submit", async (e) => {
   };
 
   const status = document.getElementById("status");
-  status.textContent = "⏳ Отправка...";
+
+  // Показываем уведомление "Отправка..."
+  showStatus("⏳ Отправка...", "neutral");
 
   try {
-    await fetch("https://script.google.com/macros/s/AKfycbyxPIjaa4sYIP3bXxVIB9OyBC98A67GUpMFvRz220g1RB6MP9vgoPzLUNBMzV-x4eCB/exec", {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbyxPIjaa4sYIP3bXxVIB9OyBC98A67GUpMFvRz220g1RB6MP9vgoPzLUNBMzV-x4eCB/exec", {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
 
-    status.textContent = "✅ Спасибо! Ответ отправлен.";
-    status.style.color = "green";
-    document.getElementById("survey-form").reset();
+    if (res.ok) {
+      showStatus("✅ Ответ сохранён! Спасибо ❤️", "success");
+      document.getElementById("survey-form").reset();
+    } else {
+      showStatus("⚠️ Ошибка отправки. Попробуйте позже.", "error");
+    }
   } catch (err) {
-    status.textContent = "❌ Ошибка отправки. Попробуйте позже.";
-    status.style.color = "red";
+    showStatus("❌ Не удалось отправить. Проверьте интернет.", "error");
   }
 });
+
+// функция для отображения уведомлений
+function showStatus(message, type) {
+  const status = document.getElementById("status");
+  status.className = "status show"; // сбрасываем классы
+  if (type === "success") status.classList.add("success");
+  if (type === "error") status.classList.add("error");
+  status.textContent = message;
+
+  // Убираем уведомление через 4 секунды
+  setTimeout(() => {
+    status.classList.remove("show");
+    setTimeout(() => status.className = "status hidden", 400);
+  }, 4000);
+}
