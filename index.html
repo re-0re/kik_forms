@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Опрос</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Опрос</h1>
+  <form id="survey-form">
+    <label>Имя:</label>
+    <input type="text" id="name" required><br><br>
+
+    <label>Возраст:</label>
+    <input type="number" id="age" required><br><br>
+
+    <label>Оцените приложение:</label>
+    <select id="rating">
+      <option>Отлично</option>
+      <option>Хорошо</option>
+      <option>Средне</option>
+      <option>Плохо</option>
+    </select><br><br>
+
+    <label>Комментарий:</label>
+    <textarea id="comment"></textarea><br><br>
+
+    <button type="submit">Отправить</button>
+  </form>
+
+  <p id="status"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
