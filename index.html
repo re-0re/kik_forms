@@ -6,29 +6,41 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Опрос</h1>
-  <form id="survey-form">
-    <label>Имя:</label>
-    <input type="text" id="name" required><br><br>
+  <div class="container">
+    <h1>Опрос</h1>
+    <p class="subtitle">Пожалуйста, ответьте на несколько вопросов 👇</p>
+    
+    <form id="survey-form">
+      <div class="form-group">
+        <label>Имя</label>
+        <input type="text" id="name" required placeholder="Введите ваше имя">
+      </div>
 
-    <label>Возраст:</label>
-    <input type="number" id="age" required><br><br>
+      <div class="form-group">
+        <label>Возраст</label>
+        <input type="number" id="age" required placeholder="Ваш возраст">
+      </div>
 
-    <label>Оцените приложение:</label>
-    <select id="rating">
-      <option>Отлично</option>
-      <option>Хорошо</option>
-      <option>Средне</option>
-      <option>Плохо</option>
-    </select><br><br>
+      <div class="form-group">
+        <label>Как вам приложение?</label>
+        <select id="rating" required>
+          <option value="">Выберите...</option>
+          <option>Отлично</option>
+          <option>Хорошо</option>
+          <option>Средне</option>
+          <option>Плохо</option>
+        </select>
+      </div>
 
-    <label>Комментарий:</label>
-    <textarea id="comment"></textarea><br><br>
+      <div class="form-group">
+        <label>Комментарий (необязательно)</label>
+        <textarea id="comment" placeholder="Ваш отзыв или пожелание"></textarea>
+      </div>
 
-    <button type="submit">Отправить</button>
-  </form>
-
-  <p id="status"></p>
+      <button type="submit">Отправить</button>
+      <p id="status"></p>
+    </form>
+  </div>
 
   <script src="script.js"></script>
 </body>
